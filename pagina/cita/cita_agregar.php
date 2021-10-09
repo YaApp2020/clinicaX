@@ -56,6 +56,7 @@ date_default_timezone_set('America/Lima');
       </div>
       <div class="modal-body">
           <div class="form-row">  
+
                                 
                              <div class="row">
                            <?php
@@ -185,10 +186,6 @@ date_default_timezone_set('America/Lima');
   </tr>
 </table>
                  
-
-
-
-
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
