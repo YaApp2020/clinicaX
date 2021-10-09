@@ -91,7 +91,16 @@ ul {
 $auto="";
 
    // $branch=$_SESSION['branch'];
-    $query=mysqli_query($con,"select m.nombre as  medico,p.nombre as  paciente,c.fecha,c.observaciones,c.estado_cita,c.id_cita from cita c inner join usuario m on c.id_medico = m.id inner join usuario p on p.id = c.id_paciente where m.id='$cid' ")or die(mysqli_error());
+    $query=mysqli_query($con,"
+     select 
+                 m.nombre as  medico,
+                 p.primernombre as  paciente,
+                 c.fecha,
+                 c.observaciones,
+                 c.estado_cita,
+               c.id_cita from cita c 
+               inner join usuario m on c.id_medico = m.id 
+               inner join u_pacientes p on p.numerodedocumento = c.id_paciente where m.id='$cid'")or die(mysqli_error());
     $i=0;
     
     while($row=mysqli_fetch_array($query)){

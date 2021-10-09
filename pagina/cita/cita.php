@@ -128,12 +128,12 @@ ul {
                 <div class="box-body">
 
 
-                        <table id="example2" class="dataTable no-footer table table-bordered table-striped">
+                        <table id="id_tabla" data-click-to-select="true" class="dataTable no-footer table table-bordered table-striped">
                           <thead>
                               <tr class="encabezado">
                                   <th>Paciente</th>
                                   <th>Médico</th>
-                                  <th>Fecha</th>
+                                  <th data-sortable="true">Fecha</th>
                                   <th>Observaciones</th>
                                   <th>Estado</th>
                                   <th > Acciones </th>
@@ -146,13 +146,21 @@ ul {
                     $auto="";
 
                       // $branch=$_SESSION['branch'];
-                        $query=mysqli_query($con,"select m.nombre as  medico,p.nombre as  paciente,c.fecha,c.observaciones,c.estado_cita,c.id_cita from cita c inner join usuario m on c.id_medico = m.id inner join usuario p on p.id = c.id_paciente ")or die(mysqli_error());
+                        $query=mysqli_query($con,"
+                        select 
+                        m.nombre as  medico,
+                        p.primernombre as  paciente,
+                        c.fecha,
+                        c.observaciones,
+                        c.estado_cita,
+                        c.id_cita from cita c 
+                        inner join usuario m on c.id_medico = m.id 
+                        inner join u_pacientes p on p.numerodedocumento = c.id_paciente ")or die(mysqli_error());
                         $i=0;
                         $alt=0;
                         while($row=mysqli_fetch_array($query)){
 
                     $id_cita=$row['id_cita'];
-
 
                         $i++;
                     ?>
@@ -231,7 +239,9 @@ ul {
 
         <script>
         $(document).ready( function() {
-                $('#example2').dataTable( {
+            $('id_tabla').DataTable();
+            
+                $('#id_tabla').dataTable( {
                   "language": {
                     "paginate": {
                       "previous": "anterior",
