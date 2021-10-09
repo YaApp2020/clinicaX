@@ -11,7 +11,7 @@ include '../layout/session.php';
  @session_start();
 date_default_timezone_set('America/Lima');
 ?>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
      <!-- Font Awesome -->
      <link rel="stylesheet" href="../layout/plugins/datatables/dataTables.bootstrap.css">
     <link rel="stylesheet" href="../layout/dist/css/AdminLTE.min.css">
@@ -20,6 +20,17 @@ date_default_timezone_set('America/Lima');
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="../layout/dist/css/skins/_all-skins.min.css">
+    
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>  
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+   <link href="../layout/build/css/custom.min.css" rel="stylesheet">
     
 <body class="nav-md">
       
@@ -31,16 +42,20 @@ date_default_timezone_set('America/Lima');
 
         <!-- top navigation -->
             <?php include '../layout/top_nav.php';?>  
-        <div class="modal fade" id="Employee">  
-            <div class="modal-dialog">  
-                <div class="modal-content" id="aviso1">  
-                    <form id="needs-validation" novalidate>  
-                        <div class="modal-header">  
-                            <h5 class="modal-title text-uppercase text-center">Terminemos de Agendar</h5>  
-                        </div>  
-                        <div class="modal-body">  
-  
-                            <div class="form-row">  
+            
+            
+            
+            
+            
+            
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-uppercase text-center">Terminemos de Agendar</h5>  
+      </div>
+      <div class="modal-body">
+          <div class="form-row">  
                                 
                              <div class="row">
                            <?php
@@ -87,7 +102,26 @@ date_default_timezone_set('America/Lima');
                                         Please enter country.  
                                     </div>  
                                 </div>  -->
-                            </div>  
+                            </div> 
+      </div>
+     <div class="modal-footer" id="btn_add">  
+                          <button type='button' class='btn btn-danger rounded-0' data-dismiss='modal'>Cancel</button>
+
+    </div>  
+    </div>
+  </div>
+</div>    
+            
+        <div class="modal fade" id="">  
+            <div class="modal-dialog">  
+                <div class="modal-content" id="aviso1">  
+                    <form id="needs-validation" novalidate>  
+                        <div class="modal-header">  
+                            
+                        </div>  
+                        <div class="modal-body">  
+  
+                             
                         </div>  
                         <div class="modal-footer" id="btn_add">  
                           <button type='button' class='btn btn-danger rounded-0' data-dismiss='modal'>Cancel</button>
@@ -101,48 +135,26 @@ date_default_timezone_set('America/Lima');
         
   <div class="right_col" role="main">
   <div class="box-header with-border">
-                  <h3 class="htitle">Registrar Cita</h3>
-                </div><!-- /.box-header -->
-
-    <div class="row">
-    <div class="col-lg-4 col-sm-8">
-        <div class="row">
-    
-        <div class="col-lg-12 col-sm-12">
-          <div class="list-group-item list-group-item-action d-flex">
-
-            <div class="p-2 flex-grow-1">
-            <input id="datepicker"  value="<?php  echo date("Y-m-d");     ?>" />
-            </div>
-          </div>
-          </div>
-      
-        <div class="col-lg-6 col-sm-6">
-                            <label for='paciente'>Paciente</label>  
-                                   <input list='listapaciente' id='in_paciente' autocomplete='off' value='' placeholder='Paciente' class='form-control' aria-describedby='inputGroupPrepend' >
-                                  <datalist id='listapaciente' disable >
-                                  </datalist>
-                            <div class='invalid-feedback'>  
-                                        Porfavor Ingrese Paciente.  
-                            </div> 
-                  </div> 
-                  <div class="col-sm-6 col-md-6 col-xs-6">
-                            <br>
-                             <label for="" id="lbl_nombrepaciente" class=""></label>
-                          </div>
-                  
-                   
-              
-                        
-             
-        <div class="col-lg-12 col-sm-12">
-            <br>
-            <label>Grupo Servicio : </label>
-            
-            <div class="row">
-            <div class="col-lg-12 form-group">
-     
-                <select id="grupo_serv" class="form-control" style="width:80%">
+                
+                 
+                 
+<table>
+  <tr>
+    <th colspan="2" style="width:50%">    <h3 class="htitle">Registrar Cita</h3>  </th>
+    <th style="width:25%"></th>
+    <th style="width:25%"></th>
+  </tr>
+  <tr>
+      <td><label>Fecha</label> </td>
+    <td><input id="datepicker" type="date" value="<?php  echo date("Y-m-d");     ?>" /></td>
+    <td><label for='paciente'>Paciente</label></td>
+    <td><input list='listapaciente' id='in_paciente' autocomplete='off' value='' placeholder='Paciente' class='form-control' aria-describedby='inputGroupPrepend' >
+                        <datalist id='listapaciente' disable >
+                        </datalist></td>
+  </tr>
+  <tr>
+    <td><br><label>Grupo Servicio : </label></td>
+    <td><br><select id="grupo_serv" class="form-control" style="width:80%">
                      <option value="">Seleccionar</option> 
                    <?php
                     $queryS=mysqli_query($con,"select * from servicios_grupos where habilitacion_citas='1'")or die(mysqli_error());
@@ -152,29 +164,45 @@ date_default_timezone_set('America/Lima');
                            $i++;
                         }
                     ?>
-                </select>
-            </div>
+                </select></td>
+      <td><br><label>Nombre</label> </td>
+    <td><br><label for="" id="lbl_nombrepaciente" class="">-------------</label></td>
+  </tr>
+  <tr>
+   <td><br><label>Ciclos</label> </td>
+   <td><br><div class=" " id="div_ciclos">---------------</div>   </td>
+   <td><br><label>Servicio</label></td>
+   <td><br><label class="" id="nombre_servicio">------------</label></td>
+  </tr>
+  <tr>
+   <td><br><label>Medico</label> </td>
+   <td><br><select class="form-control select2 "  style="width:80%" name="id_medico" id="sel_medico"  required>
               
-                
+              </select>   
+   </td>
+   <td></td>
+   <td></td>
+  </tr>
+</table>
+                 
 
 
 
-<!-- Modal -->
-<div class="modal " id="myModal" tabindex="-1" role="dialog" >
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-       
-        <h4 class="modal-title" id="myModalLabel">Servicios</h4> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         <h4 class="modal-title" id="myModalLabel">Servicios</h4> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
-          <div class="col-lg-12 form-group">
-                   <br>
-                     <label>Seleccione una opcion Porfavor </label>
-            <br> <br>
-                  <div class="form-check " id="res">
+                 
+                 <div class="row">
+                  <div class="" id="res">
                   </div>
-                </div>
+                 </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -183,33 +211,23 @@ date_default_timezone_set('America/Lima');
     </div>
   </div>
 </div>
-                
-                
-              
-            </div>
-                <br>
-            
-            <div class="row">
-                
-              
-            
-            <div class="col-lg-12 form-group " id="div_ciclos">
+
              
-             
-            </div>    
-                
-            </div>
-            
-            
-            <label class="box-header with-border" id="nombre_servicio"></label>
-             <br>
-              <label>Con el Profesional :</label>
-           <div class="form-group">
-            <select class="form-control select2 " name="id_medico" id="sel_medico"  required>
-              
-              </select>
-            </div>
         <script>
+          $('#sel_medico').change(function(){
+              console.log("sel_medico ");
+      med_cod = $("#sel_medico").val();
+      
+        cod_medico_sel= med_cod;   
+        var fechasel = $("#datepicker").val();
+        fecha_sel=fechasel;
+        dataString = 'fechasel='+fechasel+'&id_medico='+med_cod+'&tipo_usuario='+'<?php echo $tipo_usuario;?>';
+        console.log("Tabla "+dataString);
+        getCita()
+          
+});  
+            
+            
             const ciclos = document.getElementById('ciclos');
             
         var bsModal = $.fn.modal.noConflict();
@@ -279,8 +297,10 @@ date_default_timezone_set('America/Lima');
                         success: function(res) {
                             //	console.log(res);                           
                              result2.innerHTML = res;
-                           //obtenerServiciosHMedico(codigoM);                            
-                            $('#myModal').modal('toggle')
+                           //obtenerServiciosHMedico(codigoM); 
+                              event.preventDefault();
+                            jQuery.noConflict();
+                            $('#myModal').modal('toggle');
                               
                         }
                          });
@@ -301,7 +321,8 @@ date_default_timezone_set('America/Lima');
                              
                              result2.innerHTML = res;
                            //obtenerServiciosHMedico(codigoM);
-                             
+                               event.preventDefault();
+    jQuery.noConflict();
                             $('#myModal').modal('toggle')
                               
                         }
@@ -311,17 +332,15 @@ date_default_timezone_set('America/Lima');
                 <br>
                 
             
-        </div>
+  
         
-    
-    </div>
-  </div>
   
       <div class="col-lg-8 col-sm-10">
     
  
           <br>
-          <div class="datagrid"><table>
+          <div class="datagrid">
+                   <table>
                     <thead>
                         <tr>
                             <th style="width:25%;">Nombre de Asignado</th>
@@ -347,15 +366,58 @@ date_default_timezone_set('America/Lima');
                         </tr>-->
                         
                             </tbody>
-                            </table></div>
+                            </table>
+                        </div>
        
+       
+       <script>
+ var med_cod="";
+ var dataString;
+ const tabla_horarios = document.getElementById('tabla_horarios'); 
+ $('#datepicker').datepicker({
+  format: 'yyyy-mm-dd'
+});
+
+
+
+
+
+   $('#datepicker').change(function(){
+  var fechasel = $("#datepicker").val();
+  const tabla_horarios = document.getElementById('tabla_horarios');      
+  dataString = 'fechasel='+fechasel+'&id_medico='+med_cod+'&id='+'&tipo_usuario='+'<?php echo $tipo_usuario;?>';
+  console.log("Tabla "+dataString);
+   if($('input:radio[name=chequeo]:checked').val()){
+       DesplegaMedicos();
+       console.log("Medicos Desplegados");
+   }
+   //  getCita();
+  
+     });
+
+
+    
+  function getCita(){
+      $.ajax({
+            type: "POST",
+            url: "getCita.php",
+            data: dataString,
+            success: function(res2) {
+                 //$('.result').html(res);
+                 tabla_horarios.innerHTML = res2;
+                 // console.log(res2);
+            }
+        });
+  }  
+</script>
     </div>
-          </div>  
+     
             
           </div>
   </div>
 
 </div>
+    </div>
 
 <?php include '../layout/datatable_script.php';?>
 
@@ -445,7 +507,9 @@ $horario = $_POST['horario'];
 function horarioSeleccionado(horario){
      horarioseleccionado=horario;
     console.log("Horario "+horarioseleccionado);
-    
+    event.preventDefault();
+                            jQuery.noConflict();
+                            $('#myModal2').modal('toggle');
     
 }
 
@@ -555,56 +619,7 @@ in_paciente.addEventListener('propertychange', inputHandler);
 
 </script>  
   
-<script>
- var med_cod="";
- var dataString;
- const tabla_horarios = document.getElementById('tabla_horarios'); 
- $('#datepicker').datepicker({
-  format: 'yyyy-mm-dd'
-});
 
-
-
-$('#sel_medico').change(function(){
-      med_cod = $("#sel_medico").val();
-      
-     cod_medico_sel= med_cod;   
-      var fechasel = $("#datepicker").val();
-     fecha_sel=fechasel;
-   dataString = 'fechasel='+fechasel+'&id_medico='+med_cod+'&tipo_usuario='+'<?php echo $tipo_usuario;?>';
-   console.log("Tabla "+dataString);
- getCita()
-          
-});
-
-   $('#datepicker').change(function(){
-  var fechasel = $("#datepicker").val();
-  const tabla_horarios = document.getElementById('tabla_horarios');      
-  dataString = 'fechasel='+fechasel+'&id_medico='+med_cod+'&id='+'&tipo_usuario='+'<?php echo $tipo_usuario;?>';
-  console.log("Tabla "+dataString);
-   if($('input:radio[name=chequeo]:checked').val()){
-       DesplegaMedicos();
-       console.log("Medicos Desplegados");
-   }
-   //  getCita();
-  
-     });
-
-
-    
-  function getCita(){
-      $.ajax({
-            type: "POST",
-            url: "getCita.php",
-            data: dataString,
-            success: function(res2) {
-                 //$('.result').html(res);
-                 tabla_horarios.innerHTML = res2;
-                 // console.log(res2);
-            }
-        });
-  }  
-</script>
 
 <style>
 
@@ -695,7 +710,7 @@ $('#sel_medico').change(function(){
 
 
 #datepicker {
-  width: 10rem;
+  width: 15rem;
   text-align: center;
   padding-right: 1rem;
 }
