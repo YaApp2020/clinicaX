@@ -57,6 +57,7 @@ date_default_timezone_set('America/Lima');
       <div class="modal-body">
           <div class="form-row">  
                                 
+                                
                              <div class="row">
                            <?php
                          //  appnoautocomplete=""
