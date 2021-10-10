@@ -190,8 +190,8 @@ ul {
                       if(!strcmp($row['estado_cita'],'cancelado')){
 
                       }else{
-                        echo "<a class='btn btn-danger btn-print myButton2' href='../cita/editar_cita.php?id_cita=".$id_cita." role='button'><li class='glyphicon glyphicon-edit'></li></a>
-                      <a class='btn btn-primary btn-print myButton3' href='../cita/eliminar_cita.php?id_cita=".$id_cita."&observaciones=".$row['observaciones']." Cancelado por: ".$tipo.":".$session_id."'  onClick=\"return confirm('¿Está seguro de que quieres eliminar??');\"  role='button'><li class='glyphicon glyphicon-trash'></li></a>";
+                        echo "<a class=' myButton2' href='../cita/editar_cita.php?id_cita=".$id_cita." role='button'><li class='glyphicon glyphicon-edit'></li></a>
+                      <a class=' myButton3' href='../cita/eliminar_cita.php?id_cita=".$id_cita."&observaciones=".$row['observaciones']." Cancelado por: ".$tipo.":".$session_id."'  onClick=\"return confirm('¿Está seguro de que quieres eliminar??');\"  role='button'><li class='glyphicon glyphicon-trash'></li></a>";
                         
                       }            
                           ?>
@@ -353,7 +353,7 @@ ul {
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:15px;
+	font-size:13px;
 	font-weight:bold;
 	padding:1px 4px;
 	text-decoration:none;
@@ -378,7 +378,7 @@ ul {
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:15px;
+	font-size:13px;
 	font-weight:bold;
 	padding:1px 5px;
 	text-decoration:none;
